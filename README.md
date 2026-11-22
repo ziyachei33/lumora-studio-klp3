@@ -2,7 +2,7 @@ LUMORA Studio
 Kelompok 1
 WEBDEV A
 
-Penyewaan Studio Siniar (Podcast) dan Siaran Langsung Dagang
+Penyewaan Studio Siniar (Podcast) dan Siaran Langsung Dagang https://github.com/ziyachei33/lumora-studio-klp3.git
 1. ZAHRA NINDYA PUTRI 1710625077 (CEO) 
 Membuat repositori GitHub publik, mengaktifkan GitHub Pages, dan menyusun README.md yang memuat identitas kelompok serta tautan website aktif. Menulis bagian header (navigasi) dan footer pada index.html, lalu menggabungkan hasil kerja seluruh anggota ke dalam repositori.
 
