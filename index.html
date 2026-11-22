@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMORA Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+:root {
+    --peach: #ee956c;
+    --peach-light: #ffd5c0;
+    --cream: #fff7f0;
+    --ivory: #fffdf9;
+    --brown: #4b291d;
+    --text: #674332;
+    --border: #f3d5c5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+/* HEADER */
+#header-section {
+    background: var(--cream);
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: auto;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brown);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    font-size: 35px;
+}
+
+.logo small {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--peach);
+}
+
+.btn-nav {
+    background: var(--peach);
+    color: white;
+    padding: 12px 23px;
+    border-radius: 30px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.btn-nav:hover {
+    background: var(--brown);
+}
+
+/* HERO */
+#hero-section {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+    min-height: 490px;
+    background: linear-gradient(110deg, #fff6ef, #fce5d8);
+    overflow: hidden;
+}
+
+.hero-content {
+    padding: 50px 0 50px 10%;
+}
+
+.hero-label {
+    display: inline-block;
+    background: var(--peach-light);
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 11px;
+    margin-bottom: 20px;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5.5vw, 68px);
+    line-height: 1.07;
+    color: var(--brown);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    max-width: 390px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--peach);
+    color: white;
+    padding: 13px 27px;
+    border-radius: 30px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: var(--brown);
+    transform: translateY(-3px);
+}
+
+.btn-video {
+    font-size: 13px;
+}
+
+.hero-image {
+    height: 490px;
+    overflow: hidden;
+    border-radius: 180px 0 0 100px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CATALOG */
+#catalog-section {
+    padding: 45px 5% 35px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--brown);
+    font-size: 36px;
+}
+
+.section-title p {
+    font-size: 15px;
+}
+
+.section-subtitle {
+    color: var(--peach);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.package-container {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    position: relative;
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.package-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px rgba(88,48,29,.1);
+}
+
+.package-card.popular {
+    border: 2px solid var(--peach);
+}
+
+.popular-label {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    z-index: 2;
+    background: var(--peach);
+    color: white;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 11px;
+}
+
+.package-image {
+    height: 175px;
+    overflow: hidden;
+}
+
+.package-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.05);
+}
+
+.package-content {
+    padding: 17px;
+}
+
+.package-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--brown);
+    margin-bottom: 6px;
+}
+
+.package-content p {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.package-features li {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.package-features li::before {
+    content: "✓";
+    color: var(--peach);
+    font-weight: bold;
+    margin-right: 9px;
+}
+
+.package-price {
+    text-align: center;
+    margin: 15px 0;
+    color: var(--brown);
+}
+
+.package-price strong {
+    font-size: 20px;
+}
+
+.package-price span {
+    font-size: 12px;
+}
+
+.btn-package {
+    width: 100%;
+    border: none;
+    background: var(--peach-light);
+    color: var(--brown);
+    padding: 11px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-package:hover,
+.package-card.popular .btn-package {
+    background: var(--peach);
+    color: white;
+}
+
+/* CALCULATOR */
+#calc-section {
+    margin: 5px 3% 30px;
+    padding: 30px;
+    border-radius: 30px;
+    background: linear-gradient(110deg, #ffd9c5, #fff0e7);
+}
+
+.calculator-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+    gap: 20px;
+}
+
+.calculator-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--brown);
+    font-size: 27px;
+}
+
+.calculator-heading p {
+    font-size: 13px;
+}
+
+.calculator-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 22px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.9);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--brown);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fffaf7;
+    outline: none;
+    font-size: 12px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--peach);
+}
+
+.duration-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fffaf7;
+}
+
+.duration-control button {
+    border: none;
+    background: transparent;
+    color: var(--brown);
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.duration-control input {
+    border: none;
+    background: transparent;
+    text-align: center;
+}
+
+.btn-calculate {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 50%;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    background: var(--peach);
+    color: white;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-calculate:hover {
+    background: var(--brown);
+}
+
+.calculation-result {
+    grid-column: 1 / -1;
+    background: var(--peach-light);
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--brown);
+}
+
+.result-content p {
+    margin: 5px 0;
+}
+
+.total-price {
+    margin-top: 12px;
+    color: var(--brown);
+    font-size: 20px;
+}
+
+/* FEATURES */
+.features-section {
+    max-width: 1250px;
+    margin: 30px auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    border-right: 1px solid var(--peach-light);
+}
+
+.feature-item:last-child {
+    border: none;
+}
+
+.feature-icon {
+    font-size: 27px;
+}
+
+.feature-item p {
+    font-size: 12px;
+}
+
+/* FOOTER */
+#footer-section {
+    background: linear-gradient(120deg, #482619, #67402e);
+    color: white;
+    padding: 35px 5% 15px;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.3fr 1.5fr;
+    gap: 30px;
+    padding-bottom: 25px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.footer-logo small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+}
+
+.footer-brand p,
+.footer-column a,
+.footer-column p {
+    font-size: 12px;
+    color: #f2d8c9;
+}
+
+.footer-column h4 {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 6px;
+}
+
+.footer-column a:hover {
+    color: var(--peach-light);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-bottom {
+    max-width: 1300px;
+    margin: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #f2c8ae;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 992px) {
+    #hero-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .package-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calculator-container {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-heading {
+        text-align: center;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 17px;
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+    }
+
+    .btn-nav {
+        font-size: 11px;
+        padding: 9px 14px;
+    }
+
+    #hero-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-content {
+        padding: 40px 7% 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 270px;
+        border-radius: 80px 0 0 0;
+    }
+
+    #catalog-section {
+        padding: 35px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .package-container {
+        grid-template-columns: 1fr;
+    }
+
+    #calc-section {
+        margin: 10px 4% 25px;
+        padding: 20px 14px;
+    }
+
+    .calculator-heading {
+        text-align: center;
+    }
+
+    .calculator-form {
+        grid-template-columns: 1fr;
+        padding: 17px;
+    }
+
+    .btn-calculate {
+        width: 100%;
+    }
+
+    .features-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-item {
+        justify-content: flex-start;
+        border: none;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 15px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="header-section">
+<nav class="navbar">
+
+    <a href="#hero-section" class="logo">
+        <span class="logo-icon">🎙</span>
+        <span>LUMORA<small>Studio</small></span>
+    </a>
+
+    <ul class="nav-menu">
+        <li><a href="#hero-section" class="active">Beranda</a></li>
+        <li><a href="#catalog-section">Studio</a></li>
+        <li><a href="#calc-section">Kalkulator</a></li>
+        <li><a href="#footer-section">Tentang</a></li>
+    </ul>
+
+    <a href="#catalog-section" class="btn-nav">
+        Pesan Sekarang →
+    </a>
+
+</nav>
+</header>
+
+
+<!-- HERO -->
+<section id="hero-section">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            PODCAST & LIVE STREAMING STUDIO
+        </div>
+
+        <h1>Your Voice<br>Deserves a<br>Better Space.</h1>
+
+        <p>
+            Create, record, and share your story
+            in a comfortable, professional studio.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#catalog-section" class="btn-primary">
+                Explore Studio →
+            </a>
+
+            <a href="#catalog-section" class="btn-video">
+                ▶ &nbsp; Lihat Studio
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85"
+        alt="Studio Podcast">
+    </div>
+
+</section>
+
+
+<!-- CATALOG -->
+<section id="catalog-section">
+
+    <div class="section-title">
+        <span class="section-subtitle">FIND YOUR PERFECT SPACE</span>
+        <h2>Our Studio Packages</h2>
+        <p>Choose the perfect space for your creativity.</p>
+    </div>
+
+    <div class="package-container">
+
+        <!-- PAKET 1 -->
+        <article class="package-card">
+
+            <div class="package-image">
+                
+<img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=85"
+alt="Studio Suara Dasar">
+
+            </div>
+
+            <div class="package-content">
+                <h3>〽 Studio Suara Dasar</h3>
+
+                <p>Ideal untuk podcast audio berkualitas tinggi.</p>
+
+                <ul class="package-features">
+                    <li>1 Mic Professional</li>
+                    <li>Sound Treatment</li>
+                    <li>Area Nyaman</li>
+                </ul>
+
+                <div class="package-price">
+                    <strong>Rp75.000</strong> <span>/ jam</span>
+                </div>
+
+                <button class="btn-package"
+                onclick="selectPackage('basic')">
+                    Sewa Sekarang →
+                </button>
+            </div>
+        </article>
+
+
+        <!-- PAKET 2 -->
+        <article class="package-card popular">
+
+            <div class="popular-label">Most Popular</div>
+
+            <div class="package-image">
+                
+<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=800&q=85"
+alt="Studio Kreator Visual">
+
+            </div>
+
+            <div class="package-content">
+                <h3>📷 Studio Kreator Visual</h3>
+
+                <p>Untuk konten video yang lebih maksimal.</p>
+
+                <ul class="package-features">
+                    <li>2 Mic + Kamera</li>
+                    <li>Lighting Profesional</li>
+                    <li>Background Custom</li>
+                </ul>
+
+                <div class="package-price">
+                    <strong>Rp150.000</strong> <span>/ jam</span>
+                </div>
+
+                <button class="btn-package"
+                onclick="selectPackage('creator')">
+                    Sewa Sekarang →
+                </button>
+            </div>
+        </article>
+
+
+        <!-- PAKET 3 -->
+        <article class="package-card">
+
+            <div class="package-image">
+                
+<img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=800&q=85" alt="Studio Penyiaran Penuh">
+alt="Studio Penyiaran Penuh">
+
+            </div>
+
+            <div class="package-content">
+                <h3>◉ Studio Penyiaran Penuh</h3>
+
+                <p>Solusi lengkap untuk live streaming dan broadcast.</p>
+
+                <ul class="package-features">
+                    <li>Multi-Camera</li>
+                    <li>Live Streaming Ready</li>
+                    <li>Tim Support</li>
+                </ul>
+
+                <div class="package-price">
+                    <strong>Rp250.000</strong> <span>/ jam</span>
+                </div>
+
+                <button class="btn-package"
+                onclick="selectPackage('broadcast')">
+                    Sewa Sekarang →
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- CALCULATOR -->
+<section id="calc-section">
+
+    <div class="calculator-container">
+
+        <div class="calculator-heading">
+            <div>
+                <span class="section-subtitle">EASY BOOKING</span>
+                <h2>Calculate Your Price</h2>
+                <p>Simulate your studio rental cost.</p>
+            </div>
+        </div>
+
+        <form class="calculator-form" id="calculatorForm">
+
+            <div class="form-group">
+                <label for="package">Pilih Paket Studio</label>
+
+                <select id="package">
+                    <option value="basic">Studio Suara Dasar</option>
+                    <option value="creator">Studio Kreator Visual</option>
+                    <option value="broadcast">Studio Penyiaran Penuh</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Durasi Sewa (Jam)</label>
+
+                <div class="duration-control">
+                    <button type="button" id="minusBtn">−</button>
+                    <input type="number" id="duration"
+                    value="1" min="1" max="24">
+                    <button type="button" id="plusBtn">+</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="promo">Kode Promo</label>
+                <input type="text" id="promo"
+                placeholder="Masukkan kode promo">
+            </div>
+
+            <button type="submit" class="btn-calculate">
+                ▦ &nbsp; Hitung Harga
+            </button>
+
+            <div class="calculation-result" id="result" aria-live="polite">
+                Silakan pilih paket dan durasi sewa.
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+
+<!-- FEATURES -->
+<section class="features-section">
+
+    <div class="feature-item">
+        <span class="feature-icon">♧</span>
+        <p>Kualitas Audio<br>Profesional</p>
+    </div>
+
+    <div class="feature-item">
+        <span class="feature-icon">▣</span>
+        <p>Fasilitas Modern<br>& Lengkap</p>
+    </div>
+
+    <div class="feature-item">
+        <span class="feature-icon">◇</span>
+        <p>Lokasi Strategis<br>di Pusat Kota</p>
+    </div>
+
+    <div class="feature-item">
+        <span class="feature-icon">♧</span>
+        <p>Tim Support<br>24/7</p>
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer id="footer-section">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <div class="footer-logo">
+                🎙 LUMORA
+                <small>Studio</small>
+            </div>
+
+            <p>Your Voice, Your Story, Our Space.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Navigasi</h4>
+            <ul>
+                <li><a href="#hero-section">Beranda</a></li>
+                <li><a href="#catalog-section">Studio</a></li>
+                <li><a href="#calc-section">Kalkulator</a></li>
+                <li><a href="#footer-section">Tentang</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Ikuti Kami</h4>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h4>Kontak Kami</h4>
+            <p>✉ hello@lumora.studio</p>
+            <p>⌖ Jakarta, Indonesia</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Lumora Studio. All rights reserved.</p>
+        <p>Kelompok 3 - WebDev A</p>
+    </div>
+
+</footer>
+
+
+<script>
+
+// DATA HARGA PAKET
+const packages = {
+    basic: {
+        name: "Studio Suara Dasar",
+        price: 75000
+    },
+
+    creator: {
+        name: "Studio Kreator Visual",
+        price: 150000
+    },
+
+    broadcast: {
+        name: "Studio Penyiaran Penuh",
+        price: 250000
+    }
+};
+
+// FORMAT RUPIAH
+function formatRupiah(number) {
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    }).format(number);
+}
+
+// AMBIL ELEMEN
+const packageSelect = document.getElementById("package");
+const durationInput = document.getElementById("duration");
+const promoInput = document.getElementById("promo");
+const resultBox = document.getElementById("result");
+const calculatorForm = document.getElementById("calculatorForm");
+
+// TOMBOL KURANG
+document.getElementById("minusBtn").addEventListener("click", function() {
+    let duration = Number(durationInput.value);
+
+    if (duration > 1) {
+        durationInput.value = duration - 1;
+    }
+});
+
+// TOMBOL TAMBAH
+document.getElementById("plusBtn").addEventListener("click", function() {
+    let duration = Number(durationInput.value);
+
+    if (duration < 24) {
+        durationInput.value = duration + 1;
+    }
+});
+
+// PILIH PAKET DARI KARTU
+function selectPackage(packageName) {
+    packageSelect.value = packageName;
+
+    document.getElementById("calc-section").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    resultBox.innerHTML =
+        "<p>Paket berhasil dipilih. Silakan hitung harga sewa.</p>";
+}
+
+// KALKULATOR
+calculatorForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const selectedPackage = packageSelect.value;
+    const duration = Number(durationInput.value);
+    const promoCode = promoInput.value.trim().toUpperCase();
+
+    // VALIDASI DURASI
+    if (!Number.isInteger(duration) || duration < 1 || duration > 24) {
+        resultBox.innerHTML =
+            "<p>Durasi harus antara 1 sampai 24 jam.</p>";
+        return;
+    }
+
+    // DATA PAKET
+    const selected = packages[selectedPackage];
+
+    // HITUNG SUBTOTAL
+    const subtotal = selected.price * duration;
+
+    // HITUNG DISKON
+    let discount = 0;
+    let promoMessage = "Tidak menggunakan kode promo.";
+
+    if (promoCode === "ABISDIG3") {
+        discount = subtotal * 0.20;
+        promoMessage = "Promo ABISDIG3 berhasil! Diskon 20%.";
+    } else if (promoCode !== "") {
+        promoMessage = "Kode promo tidak valid.";
+    }
+
+    // TOTAL
+    const total = subtotal - discount;
+
+    // TAMPILKAN HASIL
+    resultBox.innerHTML = `
+        <div class="result-content">
+            <h3>Rincian Penyewaan</h3>
+
+            <p>Paket:
+                <strong>${selected.name}</strong>
+            </p>
+
+            <p>Harga per jam:
+                <strong>${formatRupiah(selected.price)}</strong>
+            </p>
+
+            <p>Durasi:
+                <strong>${duration} jam</strong>
+            </p>
+
+            <p>Subtotal:
+                <strong>${formatRupiah(subtotal)}</strong>
+            </p>
+
+            <p>Diskon:
+                <strong>${formatRupiah(discount)}</strong>
+            </p>
+
+            <p>${promoMessage}</p>
+
+            <h3 class="total-price">
+                Total: ${formatRupiah(total)}
+            </h3>
+        </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
